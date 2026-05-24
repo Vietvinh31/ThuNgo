@@ -1,0 +1,17 @@
+# Deploy API lên Render: https://dashboard.render.com → New → Blueprint
+# Hoặc tạo Web Service thủ công, Root Directory = server
+services:
+  - type: web
+    name: thungo-api
+    runtime: node
+    rootDir: server
+    buildCommand: npm install && npm rebuild better-sqlite3
+    startCommand: node index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: ALLOW_VERCEL_PREVIEW
+        value: "1"
+      - key: CLIENT_ORIGIN
+        sync: false

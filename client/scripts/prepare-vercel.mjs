@@ -1,6 +1,6 @@
 /**
- * Trên Vercel: đọc VITE_API_URL và ghi vercel.json proxy /api → Render.
- * Trình duyệt chỉ gọi /api (cùng domain) — tránh 404 và lỗi CORS.
+ * Trên Vercel: ghi vercel.json — proxy /api → Render (dự phòng).
+ * Trình duyệt ưu tiên VITE_API_URL (gọi thẳng Render) để tránh 405 POST vào index.html.
  */
 import fs from 'fs'
 import path from 'path'
@@ -15,22 +15,28 @@ const rewrites = []
 if (raw) {
   const base = raw.replace(/\/+$/, '').replace(/\/api$/i, '')
   rewrites.push({
-    source: '/api/:path*',
-    destination: `${base}/api/:path*`,
+    source: '/api/(.*)',
+    destination: `${base}/api/$1`,
   })
-  console.log(`[prepare-vercel] /api/* → ${base}/api/*`)
+  // Không rewrite /api/* về index.html (tránh 405 Method Not Allowed khi POST)
+  rewrites.push({
+    source: '/((?!api/).*)',
+    destination: '/index.html',
+  })
+  console.log(`[prepare-vercel] proxy /api/* → ${base}/api/*`)
+  console.log(`[prepare-vercel] VITE_API_URL sẽ gắn vào bundle — gọi thẳng Render (khuyên dùng)`)
 } else if (process.env.VERCEL === '1') {
   console.error(`
 ❌ Thiếu VITE_API_URL trên Vercel.
 
-Vercel → Settings → Environment Variables:
-  Name:  VITE_API_URL
-  Value: https://TEN-API.onrender.com/api
+Settings → Environment Variables:
+  VITE_API_URL = https://TEN-API.onrender.com/api
 
-Rồi Deployments → Redeploy.
+Rồi Redeploy (build mới).
 `)
   process.exit(1)
+} else {
+  rewrites.push({ source: '/(.*)', destination: '/index.html' })
 }
 
-rewrites.push({ source: '/(.*)', destination: '/index.html' })
 fs.writeFileSync(vercelPath, `${JSON.stringify({ rewrites }, null, 2)}\n`)

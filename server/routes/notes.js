@@ -56,19 +56,24 @@ router.post('/', async (req, res) => {
     hasPassword = 1
   }
 
-  db.createNote({
-    noteId,
-    contentEncrypted,
-    iv,
-    salt: salt || null,
-    theme,
-    expireAfterReadHours: expireAt ? null : (expireAfterReadHours ?? null),
-    expireAt: expireAt || null,
-    maxViews: Math.max(1, Math.min(10, Number(maxViews) || 1)),
-    activateAt: activateAt || null,
-    passwordHash,
-    hasPassword,
-  })
+  try {
+    db.createNote({
+      noteId,
+      contentEncrypted,
+      iv,
+      salt: salt || null,
+      theme,
+      expireAfterReadHours: expireAt ? null : (expireAfterReadHours ?? null),
+      expireAt: expireAt || null,
+      maxViews: Math.max(1, Math.min(10, Number(maxViews) || 1)),
+      activateAt: activateAt || null,
+      passwordHash,
+      hasPassword,
+    })
+  } catch (e) {
+    console.error('createNote:', e)
+    return res.status(500).json({ error: 'Không ghi được database trên server.' })
+  }
 
   res.status(201).json({ noteId })
 })
