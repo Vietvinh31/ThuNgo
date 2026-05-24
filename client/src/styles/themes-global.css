@@ -1,0 +1,307 @@
+/* Global theme — đổi toàn trang khi chọn không khí */
+
+.romantic-bg {
+  --t-bg-base: #fff8f9;
+  --t-bg-mid: #fff5f7;
+  --t-bg-end: #fff0f4;
+  --t-glow-a: rgba(255, 182, 193, 0.35);
+  --t-glow-b: rgba(251, 207, 232, 0.25);
+  --t-glow-c: rgba(254, 205, 211, 0.2);
+  --t-header-bg: rgba(255, 248, 249, 0.97);
+  --t-header-border: rgba(254, 205, 211, 0.5);
+  --t-footer-bg: rgba(255, 248, 249, 0.88);
+  --t-text: #6b4a5a;
+  --t-text-soft: #9a7a88;
+  --t-title: #9d174d;
+  --t-title-hover: #db2777;
+  --t-accent: #db2777;
+  --t-btn-from: #f9a8b4;
+  --t-btn-mid: #f472b6;
+  --t-btn-to: #ec4899;
+  --t-btn-shadow: rgba(236, 72, 153, 0.35);
+  --t-logo-from: #fecdd3;
+  --t-logo-to: #f9a8b4;
+  --t-card-border: rgba(255, 182, 193, 0.35);
+  --t-pattern-color: #fecdd3;
+  --t-deco: '♥';
+
+  transition:
+    background 0.7s ease,
+    color 0.4s ease;
+}
+
+/* Lời thư */
+.romantic-bg[data-theme='default'] {
+  --t-bg-base: #faf8f6;
+  --t-bg-mid: #fff5f3;
+  --t-bg-end: #fff0f3;
+  --t-glow-a: rgba(212, 165, 176, 0.3);
+  --t-glow-b: rgba(254, 205, 211, 0.2);
+  --t-glow-c: rgba(251, 207, 232, 0.15);
+  --t-header-bg: rgba(255, 250, 248, 0.97);
+  --t-title: #7c4d5c;
+  --t-title-hover: #9d174d;
+  --t-accent: #be185d;
+  --t-btn-from: #fda4af;
+  --t-btn-mid: #f472b6;
+  --t-btn-to: #db2777;
+  --t-logo-from: #fce7f3;
+  --t-logo-to: #fbcfe8;
+  --t-deco: '💌';
+}
+
+/* Sinh nhật */
+.romantic-bg[data-theme='birthday'] {
+  --t-bg-base: #fffbeb;
+  --t-bg-mid: #fff7ed;
+  --t-bg-end: #fce7f3;
+  --t-glow-a: rgba(251, 191, 36, 0.35);
+  --t-glow-b: rgba(251, 146, 60, 0.25);
+  --t-glow-c: rgba(244, 114, 182, 0.15);
+  --t-header-bg: rgba(255, 251, 235, 0.97);
+  --t-header-border: rgba(253, 186, 116, 0.5);
+  --t-footer-bg: rgba(255, 251, 235, 0.9);
+  --t-text: #78350f;
+  --t-text-soft: #a16207;
+  --t-title: #c2410c;
+  --t-title-hover: #ea580c;
+  --t-accent: #ea580c;
+  --t-btn-from: #fb923c;
+  --t-btn-mid: #f472b6;
+  --t-btn-to: #f97316;
+  --t-btn-shadow: rgba(249, 115, 22, 0.35);
+  --t-logo-from: #fed7aa;
+  --t-logo-to: #fdba74;
+  --t-card-border: rgba(253, 186, 116, 0.45);
+  --t-pattern-color: #fcd34d;
+  --t-deco: '🎂';
+}
+
+/* Tình yêu */
+.romantic-bg[data-theme='love'] {
+  --t-bg-base: #fff1f2;
+  --t-bg-mid: #ffe4e6;
+  --t-bg-end: #fce7f3;
+  --t-glow-a: rgba(251, 113, 133, 0.4);
+  --t-glow-b: rgba(244, 63, 94, 0.2);
+  --t-glow-c: rgba(253, 164, 175, 0.25);
+  --t-header-bg: rgba(255, 241, 242, 0.97);
+  --t-header-border: rgba(253, 164, 175, 0.55);
+  --t-footer-bg: rgba(255, 241, 242, 0.9);
+  --t-text: #881337;
+  --t-text-soft: #9f1239;
+  --t-title: #9f1239;
+  --t-title-hover: #e11d48;
+  --t-accent: #e11d48;
+  --t-btn-from: #fb7185;
+  --t-btn-mid: #f43f5e;
+  --t-btn-to: #e11d48;
+  --t-btn-shadow: rgba(225, 29, 72, 0.4);
+  --t-logo-from: #fda4af;
+  --t-logo-to: #fb7185;
+  --t-card-border: rgba(251, 113, 133, 0.4);
+  --t-pattern-color: #fda4af;
+  --t-deco: '♥';
+}
+
+/* Giáng sinh */
+.romantic-bg[data-theme='christmas'] {
+  --t-bg-base: #ecfdf5;
+  --t-bg-mid: #f0fdf4;
+  --t-bg-end: #fef2f2;
+  --t-glow-a: rgba(34, 197, 94, 0.3);
+  --t-glow-b: rgba(220, 38, 38, 0.15);
+  --t-glow-c: rgba(134, 239, 172, 0.2);
+  --t-header-bg: rgba(240, 253, 244, 0.97);
+  --t-header-border: rgba(134, 239, 172, 0.55);
+  --t-footer-bg: rgba(240, 253, 244, 0.9);
+  --t-text: #14532d;
+  --t-text-soft: #166534;
+  --t-title: #15803d;
+  --t-title-hover: #dc2626;
+  --t-accent: #16a34a;
+  --t-btn-from: #4ade80;
+  --t-btn-mid: #22c55e;
+  --t-btn-to: #dc2626;
+  --t-btn-shadow: rgba(34, 197, 94, 0.35);
+  --t-logo-from: #bbf7d0;
+  --t-logo-to: #86efac;
+  --t-card-border: rgba(134, 239, 172, 0.5);
+  --t-pattern-color: #86efac;
+  --t-deco: '❄';
+}
+
+/* Chúc mừng */
+.romantic-bg[data-theme='thanks'] {
+  --t-bg-base: #fffbeb;
+  --t-bg-mid: #fef3c7;
+  --t-bg-end: #fce7f3;
+  --t-glow-a: rgba(251, 191, 36, 0.35);
+  --t-glow-b: rgba(244, 114, 182, 0.2);
+  --t-glow-c: rgba(253, 224, 71, 0.2);
+  --t-header-bg: rgba(255, 251, 235, 0.97);
+  --t-header-border: rgba(252, 211, 77, 0.55);
+  --t-footer-bg: rgba(255, 251, 235, 0.9);
+  --t-text: #92400e;
+  --t-text-soft: #b45309;
+  --t-title: #b45309;
+  --t-title-hover: #d97706;
+  --t-accent: #d97706;
+  --t-btn-from: #fbbf24;
+  --t-btn-mid: #f472b6;
+  --t-btn-to: #f59e0b;
+  --t-btn-shadow: rgba(245, 158, 11, 0.35);
+  --t-logo-from: #fde68a;
+  --t-logo-to: #fcd34d;
+  --t-card-border: rgba(252, 211, 77, 0.5);
+  --t-pattern-color: #fcd34d;
+  --t-deco: '✿';
+}
+
+/* An ủi */
+.romantic-bg[data-theme='condolence'] {
+  --t-bg-base: #f5f3ff;
+  --t-bg-mid: #ede9fe;
+  --t-bg-end: #fff5f7;
+  --t-glow-a: rgba(167, 139, 250, 0.3);
+  --t-glow-b: rgba(196, 181, 253, 0.25);
+  --t-glow-c: rgba(254, 205, 211, 0.15);
+  --t-header-bg: rgba(245, 243, 255, 0.97);
+  --t-header-border: rgba(196, 181, 253, 0.55);
+  --t-footer-bg: rgba(245, 243, 255, 0.9);
+  --t-text: #5b21b6;
+  --t-text-soft: #7c3aed;
+  --t-title: #5b21b6;
+  --t-title-hover: #7c3aed;
+  --t-accent: #7c3aed;
+  --t-btn-from: #c4b5fd;
+  --t-btn-mid: #a78bfa;
+  --t-btn-to: #8b5cf6;
+  --t-btn-shadow: rgba(124, 58, 237, 0.3);
+  --t-logo-from: #ddd6fe;
+  --t-logo-to: #c4b5fd;
+  --t-card-border: rgba(196, 181, 253, 0.5);
+  --t-pattern-color: #c4b5fd;
+  --t-deco: '☁';
+}
+
+/* Apply variables to page */
+.romantic-bg {
+  color: var(--t-text);
+  background:
+    radial-gradient(ellipse 85% 55% at 50% -15%, var(--t-glow-a), transparent),
+    radial-gradient(ellipse 65% 45% at 100% 40%, var(--t-glow-b), transparent),
+    radial-gradient(ellipse 55% 40% at 0% 85%, var(--t-glow-c), transparent),
+    linear-gradient(180deg, var(--t-bg-base) 0%, var(--t-bg-mid) 45%, var(--t-bg-end) 100%);
+}
+
+.site-header {
+  background: var(--t-header-bg) !important;
+  border-bottom-color: var(--t-header-border) !important;
+}
+
+.web-footer {
+  background: var(--t-footer-bg) !important;
+  border-top-color: var(--t-header-border) !important;
+}
+
+.brand-title {
+  color: var(--t-title) !important;
+}
+
+.brand-title:hover,
+.group:hover .brand-title {
+  color: var(--t-title-hover) !important;
+}
+
+.brand-tagline {
+  color: var(--t-text-soft) !important;
+}
+
+.brand-logo {
+  background: linear-gradient(145deg, var(--t-logo-from), var(--t-logo-to)) !important;
+  box-shadow: 0 4px 14px var(--t-btn-shadow) !important;
+}
+
+.glass-card {
+  border-color: var(--t-card-border) !important;
+}
+
+.field-label {
+  color: var(--t-text-soft) !important;
+}
+
+.field-input,
+.field-textarea,
+.field-select {
+  color: var(--t-title) !important;
+  border-color: var(--t-card-border) !important;
+}
+
+.field-input:focus,
+.field-textarea:focus,
+.field-select:focus {
+  border-color: var(--t-accent) !important;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--t-accent) 18%, transparent) !important;
+}
+
+.btn-romantic--primary {
+  background: linear-gradient(135deg, var(--t-btn-from) 0%, var(--t-btn-mid) 45%, var(--t-btn-to) 100%) !important;
+  box-shadow: 0 4px 20px var(--t-btn-shadow) !important;
+}
+
+.btn-romantic--primary:hover:not(:disabled) {
+  box-shadow: 0 8px 28px var(--t-btn-shadow) !important;
+}
+
+.btn-romantic--secondary {
+  color: var(--t-title) !important;
+  border-color: var(--t-card-border) !important;
+}
+
+.page-title {
+  color: var(--t-title) !important;
+}
+
+.page-subtitle {
+  color: var(--t-text-soft) !important;
+}
+
+.page-icon {
+  color: var(--t-accent);
+  opacity: 0.85;
+}
+
+.floating-heart {
+  color: var(--t-accent);
+}
+
+.text-themed-accent {
+  color: var(--t-accent) !important;
+}
+
+.text-themed-title {
+  color: var(--t-title) !important;
+}
+
+.link-back {
+  color: var(--t-accent) !important;
+}
+
+.link-back:hover {
+  color: var(--t-title-hover) !important;
+}
+
+.expire-tab--active {
+  color: var(--t-title) !important;
+  border-color: var(--t-accent) !important;
+}
+
+.ai-trigger {
+  color: var(--t-accent) !important;
+  border-color: color-mix(in srgb, var(--t-accent) 35%, transparent) !important;
+}
+
+.message-reveal {
+  color: var(--t-title) !important;
+}
